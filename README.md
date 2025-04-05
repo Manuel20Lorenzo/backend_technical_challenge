@@ -22,15 +22,34 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+## 🧠 Advanced Product Search API
+
+
+
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Una API construida con NestJS que permite realizar búsquedas avanzadas de productos por nombre, categoría y ubicación, con soporte para autocompletado, ranking de relevancia y sugerencias de búsqueda.
 
 ## Installation
 
+# Opción 1: Usando Docker (recomendado)
+```bash
+$ git clone https://github.com/Manuel20Lorenzo/backend_technical_challenge.git
+$ cd backend_technical_challenge
+
+
+# Construye y levanta los contenedores
+$ docker-compose up --build
+```
+# Opción 2: Instalación local
 ```bash
 $ npm install
+$ npm run start:dev
 ```
+La API estará disponible en: http://localhost:3000
+
+Swagger UI: http://localhost:3000/api
+
 
 ## Running the app
 
@@ -58,15 +77,15 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## 
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Author - [Manuel Lorenzo](https://www.linkedin.com/in/manuel-alejandro-lorenzo-zambrano-a59332174/)
 
 ## License
 
