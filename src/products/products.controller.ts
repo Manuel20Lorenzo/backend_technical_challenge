@@ -54,11 +54,6 @@ export class ProductsController {
       (products)=>{
         return products
       }
-    ).catch(
-      (error)=>{
-        console.log('Error ')
-        return new HttpException('[Error]',HttpStatus.BAD_REQUEST)
-      }
-    );
+    )
   }
 }
