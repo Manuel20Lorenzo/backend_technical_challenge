@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data  # Carpeta local para persistencia de datos
+    command: ["postgres", "-c", "listen_addresses=*"]  # Permitir conexiones externas
+
+  app:
+    build: .
+    container_name: nestjs_app
+    restart: always
+    depends_on:
+      - db
+    #environment:
+    #  POSTGRES_HOST: db  # Usa 'db' como nombre del servicio, no 'localhost'
+    #  POSTGRES_PORT: 5432
+    #  POSTGRES_USERNAME: myuser
+    #  POSTGRES_PASS: mypassword
+    #  POSTGRES_DB: mydatabase
+    ports:
+      - "3000:3000"  # Exponer el puerto de la app en el puerto 3000
+    env_file:
+      - .env  # Cargar las variables de entorno desde el archivo .env
+    # Si quieres usar un Dockerfile en lugar de la imagen predeterminada
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"  # Exponer el puerto de Redis
