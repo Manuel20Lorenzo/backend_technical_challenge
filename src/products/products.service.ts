@@ -31,7 +31,7 @@ export class ProductsService {
     const queryBuilder = this.productRepository.createQueryBuilder('product');
 
     if (name) {
-      queryBuilder.andWhere('product.name LIKE :name', { name: `%${name}%` });
+      queryBuilder.andWhere('LOWER(product.name) LIKE :name', { name: `%${name.toLowerCase()}%` });
     }
 
     if (category) {
@@ -39,7 +39,7 @@ export class ProductsService {
     }
 
     if (location) {
-      queryBuilder.andWhere('product.location LIKE :location', { location: `%${location}%` });
+      queryBuilder.andWhere('LOWER(product.location) LIKE :location', { location: `%${location.toLowerCase()}%` });
     }
 
     queryBuilder.skip((page - 1) * limit).take(limit);

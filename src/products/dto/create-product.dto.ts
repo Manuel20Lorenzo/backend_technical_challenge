@@ -8,6 +8,7 @@ export enum ProductCategory {
   CLOTHING = 'Clothing',
   BOOKS = 'Books',
   FOOD = 'Food',
+  Home = "Home",
 }
 
 export class CreateProductDto {
@@ -27,7 +28,7 @@ export class CreateProductDto {
 
   @ApiProperty({
     description: 'Ubicación del producto',
-    example: 'Ciudad de México',
+    example: 'Caracas, Venezuela',
   })
   @IsString()
   @IsOptional()
