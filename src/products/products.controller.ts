@@ -34,8 +34,8 @@ export class ProductsController {
    * - name: Nombre del producto a buscar (opcional).
    * - category: Categoría del producto a buscar (opcional).
    * - location: Ubicación del producto a buscar (opcional).
-   * - page: Página actual para paginación (opcional).
-   * - limit: Númerode resultados por página (opcional).
+   * - page: Página actual para paginación (Obligatorio).
+   * - limit: Númerode resultados por página (Obligatorio).
    */
 
   @Get('search')
