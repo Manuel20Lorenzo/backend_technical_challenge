@@ -17,12 +17,7 @@ export class ProductsController {
 
         return product
       }
-    ).catch(
-      (error)=>{
-        console.log('OCURRIO UN ERROR:',error)
-        return new HttpException('Ocurrio un error', HttpStatus.BAD_REQUEST)
-      }
-    );
+    )
   }
 
   /**
@@ -55,6 +50,6 @@ export class ProductsController {
         return products
       }
     )
-    
+
   }
 }
