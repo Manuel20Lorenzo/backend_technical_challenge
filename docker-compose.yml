@@ -21,20 +21,10 @@ services:
     restart: always
     depends_on:
       - db
-    #environment:
-    #  POSTGRES_HOST: db  # Usa 'db' como nombre del servicio, no 'localhost'
-    #  POSTGRES_PORT: 5432
-    #  POSTGRES_USERNAME: myuser
-    #  POSTGRES_PASS: mypassword
-    #  POSTGRES_DB: mydatabase
     ports:
       - "3000:3000"  # Exponer el puerto de la app en el puerto 3000
     env_file:
       - .env  # Cargar las variables de entorno desde el archivo .env
-    # Si quieres usar un Dockerfile en lugar de la imagen predeterminada
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
 
   redis:
     image: redis:alpine

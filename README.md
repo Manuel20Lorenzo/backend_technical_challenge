@@ -50,6 +50,16 @@ La API estará disponible en: http://localhost:3000
 
 Swagger UI: http://localhost:3000/api
 
+## 📌 Consideraciones de diseño
+Para simplificar la implementación y enfocarme en los requerimientos principales de la prueba (búsqueda avanzada y relevancia), los campos category y location fueron modelados como columnas simples dentro de la entidad Product.
+
+Sin embargo, en un entorno real o con requisitos más complejos, se podría optar por una estructura relacional:
+
+- Una tabla Category relacionada con Product (@ManyToOne) permitiría reutilizar categorías, validar integridad y permitir traducciones o metadatos.
+
+- Una tabla Location (o City, Region, etc.) permitiría enriquecer la búsqueda geográfica, implementar features como autocompletado de ciudades, filtros jerárquicos, etc.
+
+Esta decisión se tomó para mantener el código simple, enfocado en la lógica de búsqueda, sin perder de vista las buenas prácticas y respetando lo comentado en challenge.
 
 ## Running the app
 
